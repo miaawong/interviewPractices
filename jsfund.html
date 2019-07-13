@@ -1,0 +1,60 @@
+<script>
+    var computerScore = 0;
+    var userScore = 0;
+    const outOf3 = () => {
+        for (var i = 1; i <= 3; i++) {
+            RPS();
+        }
+        calcScore(computerScore, userScore);
+    };
+    const RPS = () => {
+        // computer needs to choose between rock paper, or scissor
+        const determineNum = num => {
+            if (num <= 0.33) {
+                return "rock";
+            } else if (num <= 0.66) {
+                return "paper";
+            } else return "scissors";
+        };
+
+        // prompt user
+        var userChoice = prompt("rock, paper, or scissors?").toLowerCase();
+        // let computer make it's choice
+
+        var computerChoice = determineNum(Math.random());
+        // the inputs allowed are the following
+        var choices = ["rock", "paper", "scissors"];
+        // give a warning if the input does not exist
+        if (!userChoice || choices.indexOf(userChoice) === -1) {
+            prompt("Please choose between rock, paper or scissors");
+        }
+        // compare between player's choice and computer's choice
+
+        if (userChoice === computerChoice) {
+            return null;
+            console.log("it was a tie");
+        } else if (userChoice === "rock" && computerChoice === "paper") {
+            computerScore += 1;
+            console.log("computer won the round");
+        } else if (userChoice === "paper" && computerChoice === "scissors") {
+            computerScore += 1;
+            console.log("computer won the round");
+        } else if (userChoice === "scissors" && computerChoice === "rock") {
+            computerScore += 1;
+            console.log("computer won the round");
+        } else {
+            userScore += 1;
+            console.log("user won the round");
+        }
+    };
+    const calcScore = (computerScore, userScore) => {
+        if (computerScore > userScore) {
+            console.log("computer wins best of three!");
+        } else if (computerScore < userScore) {
+            console.log("HUMAN WINS best of three");
+        } else {
+            console.log("oh no! NOBODY won!!!!");
+        }
+    };
+    outOf3();
+</script>

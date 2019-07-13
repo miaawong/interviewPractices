@@ -1,0 +1,39 @@
+<script>
+    const rotate = (array, num) => {
+        var amount = num % array.length;
+        for (var i = 0; i < amount; i++) {
+            //unshift = add new items to the beginning of array
+            // pop = removes last item of array
+            array.unshift(array.pop());
+        }
+        return array;
+    };
+    console.log(rotate([1, 2, 3], 2));
+
+    // make XO grid
+    const makeXOGrid = (row, col) => {
+        var finalArr = [];
+        var startX = true;
+        //determine how many rows and loop over them
+        for (var i = 0; i < row; i++) {
+            var newRow = [];
+            //determine how many columns or amounts of x's and o's
+            for (var j = 0; j < col; j++) {
+                // if it starts with X
+                if (startX) {
+                    newRow.push("X");
+                } else {
+                    newRow.push("O");
+                }
+                // start with o's
+                startX = !startX;
+            }
+            // add newly created row to finalArray
+            finalArr.push(newRow);
+        }
+        return finalArr;
+        // values in each subarray equal to the col
+        // number of subarray = rows
+    };
+    console.log(makeXOGrid(2, 4));
+</script>
