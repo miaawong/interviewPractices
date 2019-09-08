@@ -1,0 +1,44 @@
+body {
+    background: #12c2e9; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to left,
+        #f64f59,
+        #c471ed,
+        #12c2e9
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to left,
+        #f64f59,
+        #c471ed,
+        #12c2e9
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: "Teko", sans-serif;
+}
+.content {
+    text-align: center;
+    background: white;
+    width: 500px;
+    height: 500px;
+    margin: 100px auto;
+    border-radius: 1rem;
+    font-size: 20px;
+}
+
+.title {
+    padding-bottom: 5px;
+    background: black;
+    color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+#serviceOp,
+#billAmount,
+#calculate {
+    height: 25px;
+    font-size: 15px;
+}
+
+.calc {
+    margin-top: 50px;
+}
