@@ -78,4 +78,22 @@ const maxCharacter = (str) => {
     return maxChar;
 };
 
-console.log(maxCharacter("javascript"));
+// console.log(maxCharacter("javascript"));
+
+const fizzBuzz = () => {
+    for (let i = 1; i <= 100; i++) {
+        let output = "";
+        if (i % 3 === 0) {
+            output += "Fizz";
+        }
+        if (i % 5 === 0) {
+            output += "Buzz";
+        }
+        if (output === "") {
+            output = i;
+        }
+        console.log(output);
+    }
+};
+
+console.log(fizzBuzz());
